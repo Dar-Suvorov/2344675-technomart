@@ -1,0 +1,713 @@
+@font-face {
+    font-family: "FiraSans";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../fonts/subset-FiraSans-Bold.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "PTSans";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/subset-PTSans-Regular.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "PTSans";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../fonts/subset-PTSans-Bold.woff2") format("woff2");
+    font-display: swap;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+body {
+    font-family: "PTSans", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.page-header {
+/*     width: 1170px; */
+    margin: 0 auto;
+}
+
+/*.page-main {
+        background-color: brown;
+    width: 1170px;
+    margin: 0 auto;
+}
+
+.page-footer {
+        background-color: blue;
+    width: 1170px;
+    margin: 0 auto;
+} */
+
+html {
+    height: 100%;
+    background-color: #f3f7f9;
+}
+
+.page-main {
+    flex-grow: 1;
+                min-height: 500px;
+}
+
+.header-contacts {
+                /* Возможно, лишняя обертка */
+  background-color: #f3f7f9;
+}
+
+.header-contacts-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 44px;
+  width: 1170px;
+  margin: 0 auto;
+}
+
+.header-slogan {
+  color: #ee3643;
+  font-size: 14px;
+  line-height: 18px;
+  font-style: italic;
+  max-width: 50%;
+  padding: 13px 0;
+  margin-right: auto;
+  letter-spacing: 0.3px;
+}
+
+.header-address {
+  display: block;
+  color: #32425c;
+  font-size: 14px;
+  line-height: 18px;
+  margin: 11px 31px 15px 0;
+  font-style: normal;
+  letter-spacing: -0.1px;
+}
+
+.header-phones {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 12px 4px 12px 0;
+}
+
+.phone-icon {
+  width: 16px;
+  height: 16px;
+  fill: #293449;
+  margin-right: 8px;
+}
+
+.header-phone {
+  text-decoration: none;
+
+  padding: 0;
+  color: #293449;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  align-self: flex-start;
+}
+
+.header-phone:before {
+  content: url("../images/phone.svg");
+  margin-right: 8px;
+}
+
+.header-interactive {
+  width: calc(100vw - 17px); /* (!) костыль, починить. 21px - ширина полосы скролла в браузерах */
+  background-color: #293449;
+}
+
+.header-interactive-wrapper {
+  width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+}
+
+.header-logo {
+  position: absolute;
+  z-index: 10;
+  height: 50px; /* Для прилегания outline к краям изображения. */
+}
+
+.header-search {
+  height: 45px;
+  margin-left: 220px;
+  margin-right: auto;
+  flex-grow: 1;
+}
+
+.input-search {
+  height: 100%;
+  padding: 6px 12px 5px 52px;
+  border: 0;
+  width: 100%;
+  background-color: #293449;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 24px;
+  background-image: url("../images/search-light.svg");
+  background-repeat: no-repeat;
+  background-position: 20px;
+}
+
+
+.input-search:hover,
+.input-search:focus-visible {
+  background-color: #f1f5f7;
+  color: #3d546f;
+  background-image: url("../images/search-dark.svg");
+}
+
+.input-search:focus-visible {
+  outline: none;
+}
+
+.login-wrapper {
+  display: flex;
+  /* display: none; */ /* none при залогиненом пользователе, иначе flex. */
+}
+
+.login {
+  display: flex;
+  margin-top: 14px;
+  margin-left: 12px;
+  margin-right: 2px;
+  text-decoration: none;
+  height: min-content;
+  color: #f1f5f7;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.login::before {
+  content: url("../images/login.svg");
+  height: 16px;
+  margin-right: 12px;
+}
+
+.login:focus-visible {
+  outline: none; /* outline отключен, т.к. в нем нет необходимости: при фокусе на элементе появляется всплывающая форма, которая а) закрывает собой элемент б) повторяет весь его возможный функционал. */
+}
+
+.loggedin-wrapper {
+  display: flex;
+  display: none; /* none при не залогиненом пользователе, иначе flex. */
+  padding-top: 10px;
+  position: relative;
+}
+
+.logged-username {
+  display: flex;
+  gap: 7px;
+  color: #F1F5F7;
+  text-decoration: none;
+  height: min-content;
+  margin-left: 18px;
+}
+
+.logged-username:before {
+  content: url("../images/user.svg");
+  display: block;
+  fill: #ffffff;
+  margin-top: 3px;
+}
+
+.header-logout {
+  padding: 4px;
+  margin-left: 15px;
+  height: 20px;
+}
+
+.logout-icon {
+  height: 16px;
+  width: 16px;
+}
+
+.logout-icon path {
+  fill: #ffffff;
+  width: 16px;
+  height: 16px;
+}
+
+.login-wrapper:hover > .popup-login,
+.login-wrapper:focus-within > .popup-login {
+  display: flex;
+}
+
+.loggedin-wrapper:hover > .popup-loggedin,
+.loggedin-wrapper:focus-within > .popup-loggedin {
+  display: flex;
+}
+
+.popup-login {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  z-index: 90;
+  top: 13px;
+  right: 3px;
+  width: 360px;
+  padding: 19px 29px 35px 31px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border-radius: 2px;
+  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+}
+
+.popup-title-login {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+  text-transform: uppercase;
+  margin-top: 2px;
+  margin-bottom: 47px;
+}
+
+.popup-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 10px;
+}
+
+.input {
+  height: 40px;
+  box-sizing: border-box;
+  border: 1px solid #3d546f;
+  border-radius: 2px;
+  padding: 6px 8px;
+  color: #556981;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: url("../images/hand.svg"), pointer;
+}
+
+.input::placeholder {
+  color: #cccccc;
+}
+
+.input:hover {
+  border: 1px solid #63a63e;
+}
+
+.input:focus-visible {
+  border: 1px solid #63a63e;
+  outline: 1px solid #ffbf47;
+}
+
+.input:invalid {
+  border: 2px solid #ee3643;
+}
+
+.input:invalid.input:hover {
+  border: 2px solid #ee3643;
+  outline: 2px solid #ee3643;
+}
+
+.input:disabled {
+  background-color: #f8fafb;
+  border: 1px solid #e2e2e2;
+}
+
+.input:empty { /* Устраняет применение :invalid к пустому полю.  */
+  border: 1px solid #3d546f;
+}
+
+.input:empty:hover { /* Устраняет применение :invalid к пустому полю.  */
+  border: 1px solid #3d546f;
+  outline: 1px solid #ffbf47;
+}
+
+.popup-line-remember {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 24px;
+  row-gap: 14px; /* Взято из величины кегля шрифта. */
+  margin-bottom: 38px;
+}
+
+.popup-checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+}
+
+.checkbox-container input {
+  appearance: none;
+  outline: none;
+}
+
+.checkbox-on {
+  opacity: 0;
+}
+
+.checkbox:checked ~ .checkbox-on {
+  opacity: 1;
+}
+
+.checkbox:checked ~ .checkbox-off {
+  opacity: 0;
+}
+
+.checkbox-container {
+  position: relative;
+  padding-left: 25px; /* Значение для большинства checkbox на странице. */
+  display: flex;
+}
+
+.popup-form .checkbox-container {
+  padding-left: 31px; /* Значание для checkbox в попапе. */
+  width: 140px;
+  box-sizing: border-box;
+}
+
+.checkbox-on,
+.checkbox-off {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.checkbox-container:hover path {
+  fill: rgba(50, 66, 92, 0.6);
+}
+
+.checkbox-container:active path {
+  fill: rgba(50, 66, 92, 0.2);
+}
+
+.checkbox-text {
+  color: #000000;
+  font-size: 14px;
+  line-height: 18px;
+  margin-top: 3px;
+}
+
+.checkbox-container:active .checkbox-text {
+  opacity: 0.4;
+}
+
+.checkbox-container:focus-within {
+  outline: auto;
+}
+
+.popup-helps {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.popup-forgotpassword {
+  color: #000000;
+  font-size: 14px;
+  line-height: 18px;
+  text-decoration: none;
+  padding-top: 3px;
+}
+
+.popup-line-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 5px;
+  row-gap: 10px; /* Для создания визуального инетрлиньяжа между кнопками, если они будут добавляться и создавать новую строку. */
+  transform: translateX(-5px);
+}
+
+.btn-login {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 1px; /* 2px по макету и стайлгайду, 1px по PP. */
+  text-align: left;
+  text-transform: uppercase;
+  padding: 11px 11px 11px 55px;
+  width: 145px;
+  min-height: 40px;
+  box-sizing: border-box;
+  border: none;
+  background-color: #63a63e;
+  background-image: url("../images/login-white.svg");
+  background-repeat: no-repeat;
+  background-position: 25px 14px;
+  cursor: url("../images/hand.svg"), pointer;
+}
+
+.btn-login:hover {
+  background-color: #5fbb2d;
+}
+
+.btn-login:active {
+  background-color: #518534;
+}
+
+.btn-register {
+  text-decoration: none;
+  color: #32425c;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 2px solid #63a63e;
+  background-color: #ffffff;
+  padding: 10px 15px;
+  width: 145px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: url("../images/hand.svg"), pointer;
+}
+
+.btn-register:hover {
+  border: 2px solid #3d546f;
+}
+
+.btn-register:active {
+  color: #c5c5c5;
+  border: 2px solid #c5c5c5;
+}
+
+.popop-btn-close {
+  position: absolute;
+  top: 19px;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: transparent;
+  background-image: url("../images/close.svg");
+  cursor: url("../images/hand.svg"), pointer;
+}
+
+.popup-loggedin {
+  display: block;
+  display: none; /* на время верстки */
+  position: absolute;
+  z-index: 90;
+  top: 12px;
+  right: 4px;
+  width: 360px;
+  padding: 22px 29px 35px 31px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border-radius: 2px;
+}
+
+.loggedin-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-title-loggedin {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+  text-transform: uppercase;
+  margin-bottom: 35px;
+}
+
+.popup-link {
+  text-decoration: none;
+  width: max-content;
+  color: #3d546f;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 23px;
+}
+
+.btn-logout {
+  text-decoration: none;
+  color: #32425c;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 1px; /* 2px по макету и стайлгайду, 1px по PP. */
+  text-transform: uppercase;
+  border: 2px solid #63a63e;
+  background-color: #ffffff;
+  padding: 10px 15px;
+  width: 145px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: url("../images/hand.svg"), pointer;
+}
+
+.btn-logout:hover {
+  border: 2px solid #3d546f;
+}
+
+.btn-logout:active {
+  color: #c5c5c5;
+  border: 2px solid #c5c5c5;
+}
+
+.header-menu {
+  background-color: #3d546f;
+}
+
+.header-menu-wrapper {
+  width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.header-nav {
+  position: relative;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  left: -18px;
+}
+
+.nav-link {
+  display: block;
+  padding: 19px 23px 27px 22px;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 24px;
+  text-decoration: none;
+  letter-spacing: 0.1px; /* Подгонка под PP. */
+  position: relative;
+}
+
+.nav-link::after {
+  content: attr(title);
+  color: transparent;
+  position: absolute;
+  top: 19px;
+  left: 22px;
+  letter-spacing: 0.1px;
+  font-weight: 700;
+  /* Псевдоэлемент наследует текст своего родителя и занимает место, которое занимал бы родитель в жирном начертании. При клике на родителя - родитель становится прозрачным, а псевдоэлемент видимым. */
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  background-color: #32425c;
+  outline: none;
+  color: #c5c5c5;
+}
+
+.nav-link:active {
+  background-color: #32425c;
+  color: transparent;
+}
+
+.nav-link:active::after {
+  color: #ffffff;
+}
+
+.header-counters {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-end;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 20px;
+  margin-left: auto;
+}
+
+.btn-order {
+  background-color: #63a63e;
+  border-radius: 4px;
+  border: none;
+  padding: 12px 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 3px;
+  width: 170px;
+  min-height: 42px;
+  box-sizing: border-box;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.order-icon {
+  width: 18px;
+  height: 18px;
+  opacity: 0.6;
+}
+
+.order-icon path {
+  fill: #ffffff;
+}
+
+.header-bookmarks,
+.header-basket {
+  display: flex;
+  margin-top: 12px;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.bookmarks-amount,
+.inbasket-amount {
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-left: 8px;
+  margin-right: 3px;
+}
