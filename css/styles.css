@@ -54,6 +54,8 @@ body {
     box-sizing: border-box;
 }
 
+/* header */
+
 .page-header {
 /*     width: 1170px; */
     margin: 0 auto;
@@ -148,7 +150,7 @@ html {
 }
 
 .header-interactive {
-  width: calc(100vw - 17px); /* (!) костыль, починить. 21px - ширина полосы скролла в браузерах */
+  width: calc(100vw - 17px);
   background-color: #293449;
 }
 
@@ -225,7 +227,7 @@ html {
 }
 
 .login:focus-visible {
-  outline: none; /* outline отключен, т.к. в нем нет необходимости: при фокусе на элементе появляется всплывающая форма, которая а) закрывает собой элемент б) повторяет весь его возможный функционал. */
+  outline: none; /* outline отключен, т.к. в нем нет необходимости: при фокусе на элементе появляется всплывающая форма, которая а) закрывает собой элемент б) повторяет весь его функционал. */
 }
 
 .loggedin-wrapper {
@@ -348,11 +350,13 @@ html {
   border: 1px solid #e2e2e2;
 }
 
-.input:empty { /* Устраняет применение :invalid к пустому полю.  */
+.input:empty {
+  /* Устраняет применение :invalid к пустому полю.  */
   border: 1px solid #3d546f;
 }
 
-.input:empty:hover { /* Устраняет применение :invalid к пустому полю.  */
+.input:empty:hover {
+  /* Устраняет применение :invalid к пустому полю.  */
   border: 1px solid #3d546f;
   outline: 1px solid #ffbf47;
 }
@@ -448,7 +452,7 @@ html {
   display: flex;
   flex-wrap: wrap;
   column-gap: 5px;
-  row-gap: 10px; /* Для создания визуального инетрлиньяжа между кнопками, если они будут добавляться и создавать новую строку. */
+  row-gap: 10px; /* Для визуального инетрлиньяжа между кнопками, если они будут добавляться и создавать новую строку. */
   transform: translateX(-5px);
 }
 
@@ -457,7 +461,7 @@ html {
   font-size: 14px;
   font-weight: 700;
   line-height: 18px;
-  letter-spacing: 1px; /* 2px по макету и стайлгайду, 1px по PP. */
+  letter-spacing: 1px;
   text-align: left;
   text-transform: uppercase;
   padding: 11px 11px 11px 55px;
@@ -522,7 +526,7 @@ html {
 
 .popup-loggedin {
   display: block;
-  display: none; /* на время верстки */
+  display: none;
   position: absolute;
   z-index: 90;
   top: 12px;
@@ -565,7 +569,7 @@ html {
   font-size: 14px;
   font-weight: 700;
   line-height: 18px;
-  letter-spacing: 1px; /* 2px по макету и стайлгайду, 1px по PP. */
+  letter-spacing: 1px;
   text-transform: uppercase;
   border: 2px solid #63a63e;
   background-color: #ffffff;
@@ -620,7 +624,7 @@ html {
   font-size: 16px;
   line-height: 24px;
   text-decoration: none;
-  letter-spacing: 0.1px; /* Подгонка под PP. */
+  letter-spacing: 0.1px;
   position: relative;
 }
 
@@ -632,7 +636,8 @@ html {
   left: 22px;
   letter-spacing: 0.1px;
   font-weight: 700;
-  /* Псевдоэлемент наследует текст своего родителя и занимает место, которое занимал бы родитель в жирном начертании. При клике на родителя - родитель становится прозрачным, а псевдоэлемент видимым. */
+  /* Псевдоэлемент наследует текст своего родителя и занимает место, которое занимал бы родитель в жирном начертании. При клике на родителя - родитель становится прозрачным, а псевдоэлемент видимым.
+  Если делать жирынм текст в самом списке, это сдвигает врпаво последующие пункты. */
 }
 
 .nav-link:hover,
@@ -710,4 +715,231 @@ html {
   text-transform: uppercase;
   margin-left: 8px;
   margin-right: 3px;
+}
+
+/* main */
+
+.page-main {
+  background-color: lightyellow;
+}
+
+.main-wrapper {
+  width: 1170px;
+  margin: 0 auto;
+      background-color: yellow;
+}
+
+.footer-content {
+  background-color: #32425c;
+}
+
+.footer-content-wrapper {
+  width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-links {
+  min-width: 400px;
+}
+
+.footer-active {
+  min-width: 250px;
+}
+
+.footer-logo {
+  margin-bottom: 15px;
+}
+
+.footer-contacts {
+  margin-bottom: 23px;
+}
+
+.footer-address {
+  display: block;
+  color: #f3f7f9;
+  font-style: normal;
+  letter-spacing: -0.2px;
+}
+
+.footer-phone {
+  display: block;
+  text-decoration: none;
+  color: #f3f7f9;
+  width: min-content;
+}
+
+.socials-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  max-width: 396px;
+  margin-bottom: 32px;
+}
+
+.social-item {
+  text-decoration: none;
+}
+
+.social {
+  background-color: rgba(255, 255, 255, 0.10);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+
+}
+
+.social img {
+  display: block;
+}
+
+.social:hover {
+  background-color: #293449;
+}
+
+.footer-feedback {
+  text-align: right;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.feedback-text {
+  color: #ffffff;
+}
+
+.feedback-email {
+  color: #ffd180;
+  text-decoration: none;
+}
+
+.feedback-email:hover {
+  text-decoration: underline 1px;
+  color: #ffbf47;
+}
+
+.footer-subscribe {
+  text-align: right;
+  margin-bottom: 57px;
+}
+
+.subscribe-title {
+  color: #ffffff;
+  margin-bottom: 2px;
+}
+
+.subscribe-form {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.input-email {
+  width: 223px;
+  padding: 10px 16px;
+  box-sizing: border-box;
+  border: 1px solid #63a63e;
+  border-radius: 2px;
+}
+
+.input-email::placeholder {
+  color: #bdbdbd;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.input-email:focus-visible {
+  outline: 1px solid #ffbf47;
+}
+
+.input-email:invalid {
+  border: 1px solid #ee3643;
+}
+
+.input-email:disabled {
+  background-color: #f8fafb;
+  border: 1px solid #e2e2e2;
+}
+
+.input-email:empty {
+  /* Устраняет применение :invalid к пустому полю.  */
+  border: 1px solid #63a63e;
+}
+
+.input-email:empty:hover {
+  /* Устраняет применение :invalid к пустому полю.  */
+  border: 1px solid #3d546f;
+  outline: 1px solid #ffbf47;
+}
+
+.btn-subscribe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #63a63e;
+  border: none;
+  cursor: url("../images/hand.svg"), pointer;
+}
+
+.subscribe-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.btn-subscribe:hover {
+  background-color: #5fbb2d;
+}
+
+.btn-subscribe:active {
+  background-color: #518534;
+}
+
+.footer-copyrights {
+  background-color: #293449;
+}
+
+.footer-copyrights-wrapper {
+  width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-copyright {
+  color: #ffffff;
+  margin-top: 17px;
+  margin-bottom: 21px;
+  min-width: 400px;
+  letter-spacing: -1px;
+}
+
+.footer-credits {
+  min-width: 250px;
+  color: #ffffff;
+  text-align: right;
+  font-size: 14px;
+  line-height: 18px;
+  margin-top: 21px;
+  margin-bottom: 21px;
+  letter-spacing: -0.1px;
+}
+
+.htmlacademy-link {
+  color: #ffd180;
+  text-decoration: none;
+}
+
+.htmlacademy-link:hover {
+  text-decoration: underline 1px;
+  color: #ffbf47;
 }
