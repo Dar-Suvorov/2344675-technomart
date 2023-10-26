@@ -54,41 +54,26 @@ body {
     box-sizing: border-box;
 }
 
-/* header */
-
-.page-header {
-/*     width: 1170px; */
-    margin: 0 auto;
-}
-
-/*.page-main {
-        background-color: brown;
-    width: 1170px;
-    margin: 0 auto;
-}
-
-.page-footer {
-        background-color: blue;
-    width: 1170px;
-    margin: 0 auto;
-} */
-
 html {
-    height: 100%;
-    background-color: #f3f7f9;
+  height: 100%;
 }
 
 .page-main {
-    flex-grow: 1;
-                min-height: 500px;
+  flex-grow: 1;
+  background-color: #ffffff;
 }
 
-.header-contacts {
-                /* Возможно, лишняя обертка */
+/* header */
+
+.page-header {
   background-color: #f3f7f9;
 }
 
-.header-contacts-wrapper {
+.header-contacts {
+  background-color: #f3f7f9;
+}
+
+.header-contacts {
   display: flex;
   flex-wrap: wrap;
   min-height: 44px;
@@ -115,6 +100,7 @@ html {
   margin: 11px 31px 15px 0;
   font-style: normal;
   letter-spacing: -0.1px;
+  max-width: 350px;
 }
 
 .header-phones {
@@ -122,6 +108,7 @@ html {
   flex-direction: column;
   gap: 4px;
   margin: 12px 4px 12px 0;
+  max-width: 200px;
 }
 
 .phone-icon {
@@ -133,7 +120,6 @@ html {
 
 .header-phone {
   text-decoration: none;
-
   padding: 0;
   color: #293449;
   font-size: 16px;
@@ -142,6 +128,7 @@ html {
   letter-spacing: 2px;
   text-transform: uppercase;
   align-self: flex-start;
+  text-align: right;
 }
 
 .header-phone:before {
@@ -149,8 +136,21 @@ html {
   margin-right: 8px;
 }
 
+.header-phone:hover {
+  color: rgba(41, 52, 73, 0.5);
+}
+
+.header-phone:active {
+  color: rgba(41, 52, 73, 0.3);
+}
+
+.header-phone:focus-visible {
+  outline: 2px solid #3d546f;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
 .header-interactive {
-  width: calc(100vw - 17px);
   background-color: #293449;
 }
 
@@ -165,6 +165,18 @@ html {
   position: absolute;
   z-index: 10;
   height: 50px; /* Для прилегания outline к краям изображения. */
+}
+
+.header-logo:hover {
+  opacity: 0.9;
+}
+
+.header-logo:active {
+  opacity: 0.8;
+}
+
+.header-logo:focus-visible {
+  outline: 1px solid #ffffff;
 }
 
 .header-search {
@@ -226,8 +238,11 @@ html {
   margin-right: 12px;
 }
 
-.login:focus-visible {
-  outline: none; /* outline отключен, т.к. в нем нет необходимости: при фокусе на элементе появляется всплывающая форма, которая а) закрывает собой элемент б) повторяет весь его функционал. */
+.login:focus-visible,
+.logged-username:focus-visible {
+  outline: none; /* outline отключен, т.к. в нем нет необходимости: при фокусе на элементе появляется всплывающая форма, которая а) закрывает собой элемент б) повторяет весь его функционал.
+  Вместо этого изменен opacity, на случай изменения положения формы.*/
+  opacity: 0.5;
 }
 
 .loggedin-wrapper {
@@ -257,6 +272,19 @@ html {
   padding: 4px;
   margin-left: 15px;
   height: 20px;
+}
+
+.header-logout:hover {
+  opacity: 0.7;
+}
+
+.header-logout:active {
+  opacity: 0.5;
+}
+
+.header-logout:focus-visible {
+  opacity: 0.7;
+  outline: none;
 }
 
 .logout-icon {
@@ -302,6 +330,9 @@ html {
   text-transform: uppercase;
   margin-top: 2px;
   margin-bottom: 47px;
+  max-width: 280px; /* Ширина подобрана так, чтобы не пересекаться с кнопкой закрытия формы. */
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .popup-inputs {
@@ -365,7 +396,7 @@ html {
   display: flex;
   flex-wrap: wrap;
   column-gap: 24px;
-  row-gap: 14px; /* Взято из величины кегля шрифта. */
+  row-gap: 14px;
   margin-bottom: 38px;
 }
 
@@ -424,6 +455,10 @@ html {
   font-size: 14px;
   line-height: 18px;
   margin-top: 3px;
+  width: max-content;
+  max-width: 190px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .checkbox-container:active .checkbox-text {
@@ -431,8 +466,10 @@ html {
 }
 
 .checkbox-container:focus-within {
-  outline: auto;
+  outline: 2px solid #3d546f;
+  outline-offset: 2px;
 }
+
 
 .popup-helps {
   display: flex;
@@ -446,6 +483,20 @@ html {
   line-height: 18px;
   text-decoration: none;
   padding-top: 3px;
+  max-width: 120px;
+}
+
+.popup-forgotpassword:hover {
+  opacity: 0.6;
+}
+
+.popup-forgotpassword:active {
+  opacity: 0.3;
+}
+
+.popup-forgotpassword:focus-visible {
+  outline: 2px solid #3d546f;
+  outline-offset: 2px;
 }
 
 .popup-line-buttons {
@@ -453,7 +504,7 @@ html {
   flex-wrap: wrap;
   column-gap: 5px;
   row-gap: 10px; /* Для визуального инетрлиньяжа между кнопками, если они будут добавляться и создавать новую строку. */
-  transform: translateX(-5px);
+  transform: translateX(-5px); /* Нормализует воздух вокруг первого пункта меню при наведении. */
 }
 
 .btn-login {
@@ -472,8 +523,10 @@ html {
   background-color: #63a63e;
   background-image: url("../images/login-white.svg");
   background-repeat: no-repeat;
-  background-position: 25px 14px;
+  background-position: 25px calc(100% / 2);
   cursor: url("../images/hand.svg"), pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .btn-login:hover {
@@ -482,6 +535,10 @@ html {
 
 .btn-login:active {
   background-color: #518534;
+}
+
+.btn-login:focus-visible {
+  outline: 2px solid #293449;
 }
 
 .btn-register {
@@ -497,10 +554,9 @@ html {
   padding: 10px 15px;
   width: 145px;
   box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   cursor: url("../images/hand.svg"), pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .btn-register:hover {
@@ -512,16 +568,35 @@ html {
   border: 2px solid #c5c5c5;
 }
 
+.btn-register:focus-visible {
+  outline: 2px solid #293449;
+}
+
 .popop-btn-close {
   position: absolute;
-  top: 19px;
-  right: 20px;
-  width: 20px;
-  height: 20px;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
   border: none;
   background-color: transparent;
   background-image: url("../images/close.svg");
   cursor: url("../images/hand.svg"), pointer;
+  padding: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.popop-btn-close:hover {
+  opacity: 0.7;
+}
+
+.popop-btn-close:active {
+  opacity: 0.3;
+}
+
+.popop-btn-close:focus-visible {
+  outline: 2px solid #3d546f;
 }
 
 .popup-loggedin {
@@ -563,6 +638,19 @@ html {
   margin-bottom: 23px;
 }
 
+.popup-link:hover {
+  opacity: 0.7;
+}
+
+.popup-link:active {
+  opacity: 0.5;
+}
+
+.popup-link:focus-visible {
+  outline: 2px solid #293449;
+  outline-offset: 2px;
+}
+
 .btn-logout {
   text-decoration: none;
   color: #32425c;
@@ -589,6 +677,10 @@ html {
 .btn-logout:active {
   color: #c5c5c5;
   border: 2px solid #c5c5c5;
+}
+
+.btn-logout:focus-visible {
+  outline: 2px solid #293449;
 }
 
 .header-menu {
@@ -637,7 +729,7 @@ html {
   letter-spacing: 0.1px;
   font-weight: 700;
   /* Псевдоэлемент наследует текст своего родителя и занимает место, которое занимал бы родитель в жирном начертании. При клике на родителя - родитель становится прозрачным, а псевдоэлемент видимым.
-  Если делать жирынм текст в самом списке, это сдвигает врпаво последующие пункты. */
+  Если делать жирынм текст в самом списке, это сдвигает вправо последующие пункты. */
 }
 
 .nav-link:hover,
@@ -687,6 +779,18 @@ html {
   cursor: pointer;
 }
 
+.btn-order:hover {
+  background-color: #5fbb2d;
+}
+
+.btn-order:active {
+  background-color: #518534;
+}
+
+.btn-order:focus-visible {
+  outline: 1px solid #ffffff;
+}
+
 .order-icon {
   width: 18px;
   height: 18px;
@@ -717,17 +821,12 @@ html {
   margin-right: 3px;
 }
 
-/* main */
-
-.page-main {
-  background-color: lightyellow;
+.header-bookmarks:focus-visible,
+.header-basket:focus-visible {
+  outline: 1px solid #ffffff;
 }
 
-.main-wrapper {
-  width: 1170px;
-  margin: 0 auto;
-      background-color: yellow;
-}
+/* footer */
 
 .footer-content {
   background-color: #32425c;
@@ -762,6 +861,9 @@ html {
   color: #f3f7f9;
   font-style: normal;
   letter-spacing: -0.2px;
+  max-width: 500px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .footer-phone {
@@ -769,6 +871,21 @@ html {
   text-decoration: none;
   color: #f3f7f9;
   width: min-content;
+  max-width: 500px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.footer-phone:hover {
+  opacity: 0.7;
+}
+
+.footer-phone:active {
+  opacity: 0.5;
+}
+
+.footer-phone:focus-visible {
+  outline: 1px solid #ffffff;
 }
 
 .socials-list {
@@ -805,24 +922,47 @@ html {
   background-color: #293449;
 }
 
+.social:active {
+  opacity: 0.7;
+}
+
+.social:focus-visible {
+  outline: 1px solid #ffffff;
+}
+
 .footer-feedback {
   text-align: right;
   margin-top: 15px;
   margin-bottom: 30px;
+  max-width: 300px;
 }
 
 .feedback-text {
   color: #ffffff;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .feedback-email {
   color: #ffd180;
   text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .feedback-email:hover {
   text-decoration: underline 1px;
   color: #ffbf47;
+}
+
+.feedback-email:active {
+  text-decoration: underline 1px;
+  opacity: 0.7;
+}
+
+.feedback-email:focus-visible {
+  outline: 1px solid #ffffff;
+  outline-offset: 2px;
 }
 
 .footer-subscribe {
@@ -833,6 +973,9 @@ html {
 .subscribe-title {
   color: #ffffff;
   margin-bottom: 2px;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .subscribe-form {
@@ -903,6 +1046,10 @@ html {
   background-color: #518534;
 }
 
+.btn-subscribe:focus-visible {
+  outline: 1px solid #ffbf47;
+}
+
 .footer-copyrights {
   background-color: #293449;
 }
@@ -921,6 +1068,9 @@ html {
   margin-bottom: 21px;
   min-width: 400px;
   letter-spacing: -1px;
+  max-width: 500px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .footer-credits {
@@ -932,6 +1082,9 @@ html {
   margin-top: 21px;
   margin-bottom: 21px;
   letter-spacing: -0.1px;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .htmlacademy-link {
@@ -942,4 +1095,1069 @@ html {
 .htmlacademy-link:hover {
   text-decoration: underline 1px;
   color: #ffbf47;
+}
+
+.htmlacademy-link:active {
+  text-decoration: underline 1px;
+  opacity: 0.7;
+}
+
+.htmlacademy-link:focus-visible {
+  outline: 1px solid #ffffff;
+  outline-offset: 1px;
+}
+
+/* main */
+
+/* Блок с разделами, слайдер */
+
+.main-features {
+  width: 1170px;
+  margin: 0 auto;
+  margin-top: 52px;
+  margin-bottom: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 370px);
+  column-gap: 30px;
+  row-gap: 28px;
+}
+
+.main-feature {
+  position: relative;
+  padding: 20px 165px 33px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 180px;
+  box-sizing: border-box;
+  background-position: 243px 45px;
+  background-repeat: no-repeat;
+  background-color: #556981;
+}
+
+.feature-materials {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+}
+
+.feature-tools {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 1;
+}
+
+.feature-equipment {
+  grid-column: 3 / span 1;
+  grid-row: 1 / span 1;
+}
+
+.feature-sale {
+  grid-column: 3 / span 1;
+  grid-row: 2 / span 1;
+}
+
+.feature-delivery {
+  grid-column: 3 / span 1;
+  grid-row: 3 / span 1;
+}
+
+.slider-container {
+  position: relative;
+  grid-column: 1 / 3;
+  grid-row: 2 / 4;
+  background-color: #3d546f;
+}
+
+.feature-caption {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+  text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.feature-link {
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 16px; /* Обеспечивает воздух до заголовка, сколько бы строк в нём ни было. */
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  padding: 10px 10px 10px 28px;
+  background-image: url("../images/arrow-right.svg");
+  background-repeat: no-repeat;
+  background-position: 5px 10px;
+  cursor: url("../images/hand.svg"), pointer;
+}
+
+.feature-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.feature-link:active {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.feature-link:focus-visible {
+  outline: 2px solid #3d546f;
+}
+
+.feature-materials {
+  background-color: #ffbf47;
+  background-image: url("../images/icon-paints.svg");
+}
+
+.feature-tools {
+  background-color: #3bbce3;
+  background-image: url("../images/icon-tools.svg");
+}
+
+.feature-equipment {
+  background-color: #dc91d8;
+  background-image: url("../images/icon-equipment.svg");
+}
+
+.feature-sale {
+  background-color: #8ed78f;
+  background-image: url("../images/icon-sale.svg");
+}
+
+.feature-delivery {
+  background-color: #ffbf47;
+  background-image: url("../images/icon-delivery.svg");
+}
+
+.feature-new:after {
+  content:url("../images/new.svg");
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.slide {
+  display: none; /* По умолчанию слайды скрыты, кроме имеющего класс slide-current. */
+  min-height: 390px;
+  padding: 50px 50px 120px 50px;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-color: #556981;
+}
+
+.slide-current {
+  display: block; /* Включает видимость текущего слайда. */
+}
+
+.slider-title {
+  font-family: "FiraSans", sans-serif;
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 42px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.slider-text {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.slider-img {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.slider-button {
+  position: absolute;
+  top: 179px;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(41, 52, 73, 0.6);
+  border: none;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: url("../images/hand.svg"), pointer;
+  z-index: 10;
+}
+
+.slider-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.slider-button:active {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.slider-button:focus-visible {
+  outline: 2px solid #ffffff;
+}
+
+.slider-left {
+  left: 20px;
+  background-image: url("../images/slider/slider-arrow-left.svg");
+}
+
+.slider-right {
+  right: 20px;
+  background-image: url("../images/slider/slider-arrow-right.svg");
+}
+
+.btn-standart {
+  display: block;
+  min-height: 45px;
+  min-width: 45px;
+  padding: 13px 5px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #ee3643;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 2px;
+  text-align: center;
+  cursor: url("../images/hand.svg"), pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn-standart:hover {
+  background-color: #ca2c37;
+}
+
+.btn-standart:active {
+  background-color: #ba2732;
+}
+
+.btn-standart:focus-visible {
+  outline: 2px solid #293449;;
+}
+
+.slider-tocatalog {
+  position: absolute;
+  left: 50px;
+  bottom: 40px;
+  min-width: 195px;
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 400px;
+}
+
+.slider-tocatalog:focus-visible {
+  outline: 2px solid #ffffff;
+}
+
+.slider-pagination {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  padding: 0 100px;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 15px;
+}
+
+.slider-pagedot {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 8px;
+  height: 8px;
+  background-color: #ffd180;
+  border: none;
+  border-radius: 50%;
+  cursor: url("../images/hand.svg"), pointer;
+}
+
+.slider-pagedot:hover {
+  background-color: #ffbf47;
+}
+
+.slider-pagedot:active {
+  background-color: #ff9947;
+}
+
+.slider-pagedot:focus-visible {
+  outline: 2px solid #3d546f;
+}
+
+.pagedot-current {
+  background-color: #ffffff;
+}
+
+/* Блок "Каталог" */
+
+.main-catalog {
+  width: 1170px;
+  margin: 0 auto;
+}
+
+.catalog-title {
+  font-family: "FiraSans", sans-serif;
+  color: #293449;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 42px;
+  text-transform: uppercase;
+  margin-bottom: 26px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.catalog-container {
+  display: flex;
+}
+
+.catalog-filters {
+  width: 220px;
+  margin-right: 73px;
+}
+
+.filters-range {
+  margin-bottom: 40px;
+}
+
+.range-title {
+  color: #000000;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.range-slider {
+  width: 220px;
+  height: 40px;
+  background-color: #f7f3ec;
+  margin-bottom: 7px;
+  position: relative;
+}
+
+.range-backline {
+  position: absolute;
+  top: 19px;
+  left: 33px;
+  height: 2px;
+  width: 64px;
+  background-color: #5fbb2d;
+}
+
+.range-topline {
+  position: absolute;
+  top: 19px;
+  left: 98px;
+  height: 2px;
+  width: 102px;
+  background-color: #3d546f;
+}
+
+.range-button {
+  position: absolute;
+  top: 9px;
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border: 2px solid #3d546f;
+  border-radius: 50%;
+  cursor: url("../images/hand.svg"), pointer;
+}
+
+.range-button:hover {
+  background-color: #518534;
+}
+
+.range-button:active {
+  background-color: #5fbb2d;
+}
+
+.range-button:focus-visible {
+  outline: 2px solid #ee3643;
+}
+
+.range-button-from {
+  left: 20px;
+}
+
+.range-button-to {
+  left: 90px;
+}
+
+.range-fields {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.range-fields:after { /* Тире между полями ввода */
+  content: "";
+  position: absolute;
+  top: 19px;
+  left: 105px;
+  width: 8px;
+  height: 1px;
+  background-color: #293449;
+}
+
+.range-input {
+  width: 95px;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: #f7f3ec;
+  color: #293449;
+  font-size: 14px;
+  line-height: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.range-input::placeholder {
+  color: #cccccc;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.range-input:focus-visible {
+  outline: 2px solid #3d546f;
+}
+
+.filters-checkboxes,
+.filters-radios {
+  margin: 0 0 28px 0;
+  padding: 0;
+  border: none;
+}
+
+.filters-checkboxes .checkbox-text {
+  margin-top: 1px;
+  margin-bottom: 2px;
+  padding-left: 2px;
+}
+
+.checkboxes-title,
+.radio-title {
+  color: #000000;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 220px;
+}
+
+.filters-checkboxes .checkbox-container {
+  margin-bottom: 18.5px;
+  width: min-content;
+}
+
+.radio-container {
+  display: block;
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 16px;
+  padding-top: 1px;
+}
+
+.radio-container input {
+  appearance: none;
+  outline: none;
+}
+
+.radio-text {
+  color: #000000;
+  font-size: 14px;
+  line-height: 18px;
+  margin-top: 3px;
+  width: max-content;
+}
+
+.radio:before {
+  content: url("../images/radio-off.svg");
+  position: absolute;
+  top: 3px;
+  left: 4px;
+}
+
+.radio:checked::before {
+  content: url("../images/radio-on.svg");
+}
+
+.filters-radios:focus-within {
+  outline: 2px solid #3d546f;
+  outline-offset: 2px;
+}
+
+.btn-showfilter {
+  text-decoration: none;
+  color: #32425c;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 2px solid #3d546f;
+  background-color: #ffffff;
+  padding: 10px 15px;
+  width: 220px;
+  box-sizing: border-box;
+  cursor: url("../images/hand.svg"), pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn-showfilter:hover {
+  /* Состояния покоя для этой кнопки соответствует hover из стайлгайда, поэтому остояния обменяны местами. */
+  border-color: #63A63E;
+}
+
+.btn-showfilter:active {
+  color: #c5c5c5;
+  border-color: #c5c5c5;
+}
+
+.btn-showfilter:focus-visible {
+  border-color: #63A63E;
+  outline: 2px solid #ffbf47;
+}
+
+.catalog-sorting {
+  margin-top: 31px;
+  margin-bottom: 32px;
+  margin-left: 6px;
+}
+
+.select-container {
+  position: relative;
+  width: min-content;
+}
+
+.select {
+  min-width: 280px;
+  height: 40px;
+  padding: 8px 32px 8px 16px;
+  box-sizing: border-box;
+  color: #3d546f;
+  font-size: 16px;
+  line-height: 24px;
+  background-color: #ffffff;
+  border: 2px solid #3d546f;
+  border-radius: 2px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.select-container:hover .select {
+  border-color: #63a63e;
+  cursor: url("../images/hand.svg"), pointer;
+}
+
+.select:focus-visible {
+  border-color: #63a63e;
+  outline: 1px solid #ffbf47;
+}
+
+.select-arrow {
+  position: absolute;
+  top: 7px;
+  right: 2px;
+  padding: 10px;
+  cursor: url("../images/hand.svg"), pointer;
+}
+
+.select-arrow:hover path {
+  fill: #63a63e;
+}
+
+.catalog-cardslist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 33px;
+  row-gap: 28px;
+  margin-bottom: 32px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 270px;
+  min-height: 380px;
+  padding: 27px 27px 23px 27px;
+  box-sizing: border-box;
+}
+
+.card:hover {
+  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+}
+
+.card-photo-container {
+  /* На случай, если фото окажется меньше стандартной ширины. */
+  width: 216px;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 14px;
+}
+
+.card-title {
+  color: #293449;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+  text-align: center;
+  max-width: 216px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 13px;
+  flex-grow: 1;
+}
+
+.card-oldprice {
+  color: #a9a9a9;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 2px;
+  text-align: center;
+  text-decoration: line-through;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  max-width: 216px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-price-container {
+  /* Обертка для того, чтобы весь ценник был по центру карточки, а надпись в нем - по центру прямоугольной части ценника. */
+  min-width: 139px;
+  margin: 0 auto;
+  position: relative;
+  text-decoration: none;
+}
+
+.card-pricelabel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ee3643;
+  position: relative;
+  height: 40px; /* Расширение по вертикали не предусмотрено, т.к. по макету в ценнике только число (числа по правилам типографики не переносятся на новую строку).
+  Если возможны двустрочные ценники, то размер псевдэлемента-уголка нужно расчитывать динамически, исходя из высоты ценника: height / sqrt(2). */
+  margin-right: 20px;
+  max-width: 200px;
+  padding: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.card-price-container::after {
+  content: "";
+  display: block;
+  width: 30.5px;
+  height: 28.5px;
+  border-radius: 2px;
+  background-color: #ee3643;
+  transform: rotate(45deg);
+  position: absolute;
+  right: 5px;
+  top: 5.8px;
+}
+
+.card-price-container:hover .card-pricelabel,
+.card-price-container:hover::after {
+  background-color: #ca2c37;
+}
+
+.card-price-container:active .card-pricelabel,
+.card-price-container:active::after {
+  background-color: #ba2732;
+}
+
+.card-price-container:focus-visible {
+  outline: 2px solid #293449;
+}
+
+.card-new:before {
+  content: url("../images/new.svg");
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 20;
+}
+
+.card-overlay {
+  position: absolute;
+  width: 216px;
+  height: 180px;
+  background-color: rgba(255, 255, 255, 0.90);
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  align-items: center;
+  padding-top: 34px;
+  padding-right: 12px;
+  box-sizing: border-box;
+  display: none; /* По умолчанию скрыто. */
+}
+
+.card:hover .card-overlay {
+  display: flex;
+}
+
+.card-overlay:focus-within {
+  display: flex;
+}
+
+.btn-buy {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 2px;
+  text-align: left;
+  text-transform: uppercase;
+  padding: 11px 11px 11px 46px;
+  width: 135px;
+  min-height: 40px;
+  box-sizing: border-box;
+  border: none;
+  background-color: #63a63e;
+  background-image: url("../images/cart-buy.svg");
+  background-repeat: no-repeat;
+  background-position: 23px 13px;
+  cursor: url("../images/hand.svg"), pointer;
+}
+
+.btn-buy:hover {
+  background-color: #5fbb2d;
+}
+
+.btn-buy:active {
+  background-color: #518534;
+}
+
+.btn-buy:focus-visible {
+  outline: 2px solid #293449;
+}
+
+.btn-bookmark {
+  text-decoration: none;
+  color: #32425c;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 2px solid #63a63e;
+  background-color: #ffffff;
+  padding: 10px 15px;
+  width: 135px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: url("../images/hand.svg"), pointer;
+}
+
+.btn-bookmark:hover {
+  border: 2px solid #3d546f;
+}
+
+.btn-bookmark:active {
+  color: #c5c5c5;
+  border: 2px solid #c5c5c5;
+}
+
+.btn-bookmark:focus-visible {
+  outline: 2px solid #293449;
+}
+
+.catalog-pagination {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-left: 10px;
+  margin-bottom: 53px;
+}
+
+.pagination-item {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pagination-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 45px;
+  min-width: 50px;
+  max-width: 75px;
+  box-sizing: border-box;
+  text-align: center;
+  color: #ffffff;
+  background-color: #3d546f;
+  border-radius: 2px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pagination-link:hover {
+  opacity: 0.7;
+}
+
+.pagination-link:active {
+  opacity: 0.5;
+}
+
+.pagination-link:focus-visible {
+  outline: 2px solid #293449;
+}
+
+.pagination-current .pagination-link  {
+  color: #3d546f;
+  background-color: #ffffff;
+}
+
+.pagination-showmore .pagination-link {
+  background-color: #ee3643;
+  padding-left: 38px;
+  padding-right: 38px;
+  max-width: 250px;
+  margin-left: 10px;
+}
+
+/* Блок "Сервисы" */
+
+.main-services {
+  background-color: #f4f7f9;
+}
+
+.section-wrapper {
+  width: 1170px;
+  margin: 0 auto;
+  display: flex; /* Для предотвращения схлопывания margin'ов. */
+  flex-direction: column;
+}
+
+.services-title {
+  display: block;
+  padding: 0 100px; /* Воздух вокруг заголовка. */
+  margin-top: 52px;
+  margin-bottom: 30px;
+  font-family: "FiraSans", sans-serif;
+  color: #293449;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 42px;
+  text-transform: uppercase;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.services-text {
+  color: #293449;
+  text-align: center;
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 63px;
+  max-width: 1170px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.services-cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 52px;
+}
+
+.service-card {
+  display: block;
+  width: 370px;
+  min-height: 385px;
+  padding: 160px 30px 30px 30px;
+  box-sizing: border-box;
+  text-decoration: none;
+  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+  background-repeat: no-repeat;
+  background-position: 30px 25px;
+}
+
+.service-card:hover .service-title {
+  opacity: 0.7;
+}
+
+.service-card:active .service-title {
+  opacity: 0.5;
+}
+
+.service-card:focus-visible {
+  outline: 2px solid #293449;
+}
+
+.service-title {
+  color: #32425c;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+  max-width: 310px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.service-text {
+  color: #000000;
+  max-width: 310px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.service-delivery {
+  background-image: url("../images/services-delivery.svg");
+}
+
+.service-warranty {
+  background-image: url("../images/services-warranty.svg");
+}
+
+.service-credit {
+  background-image: url("../images/services-credit.svg");
+}
+
+/* Блоки "О компании", "Контакты" */
+
+.sections-wrapper {
+  width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 49px;
+}
+
+.main-about {
+  width: 620px;
+  margin-right: 49px;
+}
+
+
+.about-title,
+.contacts-title {
+  font-family: "FiraSans", sans-serif;
+  display: block;
+  margin-top: 52px;
+  margin-bottom: 22px;
+  color: #293449;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 42px;
+  text-transform: uppercase;
+  max-width: 500px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.about-texts {
+  width: 500px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 25px;
+}
+
+.about-text {
+  color: #293449;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 26px;
+}
+
+.btn-about {
+  width: 195px;
+}
+
+.contacts-text {
+  color: #293449;
+  font-size: 16px;
+  line-height: 24px;
+  max-width: 500px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 31px;
+}
+
+.contacts-map-link {
+  display: block;
+  /* Интерактивные состояния не прописаны, т.к. предполагается, что в готовом виде карта будет интерактивная. */
+}
+
+.contacts-map-photo {
+  display: block;
+}
+
+.contacts-map-link:focus-visible {
+  outline: 2px solid #293449;
 }

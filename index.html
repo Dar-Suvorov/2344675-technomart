@@ -6,27 +6,25 @@
     <title>HTML Academy: ТЕХНОМАРТ | Главная</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon16.png">
+    <link rel="icon" type="image/png" href="favicon.png">
   </head>
 
   <body>
     <header class="page-header">
 
       <div class="header-contacts">
-        <div class="header-contacts-wrapper"> <!-- (!) Возможно, лишняя обертка -->
           <div class="header-slogan">Интернет-магазин строительных материалов и инструментов для ремонта</div>
           <address class="header-address">г.&nbsp;Санкт-Петербург, ул.&nbsp;Б.&nbsp;Конюшенная, д.&nbsp;19/8</address>
           <div class="header-phones">
             <a class="header-phone" href="tel:+78125550555">+7&nbsp;(812)&nbsp;555&#8209;05&#8209;55</a>
           </div>
-        </div>
       </div>
 
       <div class="header-interactive">
         <div class="header-interactive-wrapper">
           <a class="header-logo" href="index.html">
             <svg width="220" height="50" viewBox="0 0 220 50" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
+              xmlns="http://www.w3.org/2000/svg" aria-label="Логотип магазина «Техномарт».">
               <rect width="220" height="50" fill="#EE3643" />
               <rect y="45" width="220" height="5" fill="#B52933" />
               <path fill-rule="evenodd" clip-rule="evenodd"
@@ -34,7 +32,7 @@
                 fill="white" />
             </svg>
               <!-- Логотип заинлайнен вместе с красным фоном, чтобы обеспечить одинаковое отображение в любом случае.
-              Альтернативное решение: экспорт в svg только слова "ТЕХНОМАРТ" и размещение его в центре красного блока, строка снизу - псевдоэлемент с position: absolute. Недостаток в данном случае: в хедере и футере надписи в логотипе немного отличаются по высоте, прдиется усложнять код подстройкой высоты (с замедлением отрисовки) или экспортировать два экземпляра надписи. -->
+              Альтернативное решение: экспорт в svg только слова "ТЕХНОМАРТ" и размещение его в центре красного блока, строка снизу - псевдоэлемент с position: absolute. Недостаток в данном случае: в хедере и футере надписи в логотипе немного отличаются по высоте, прдиется усложнять код подстройкой высоты (с замедлением отрисовки) или экспортировать два экземпляра надписи, что эквивалентно вставке двух разных svg логотипа разной высоты. -->
           </a>
           <form class="header-search" action="https://echo.htmlacademy.ru/" method="post">
             <input type="hidden" name="user-id" value="guest">
@@ -58,7 +56,7 @@
                     placeholder="Пароль" required>
                 </div>
                 <div class="popup-line-remember">
-                  <div class="popup-checkboxes"> <!-- Обертка на случай добавления checkbox'ов -->
+                  <div class="popup-checkboxes"> <!-- Обертка на случай добавления checkbox'ов. -->
                     <label class="checkbox-container">
                       <input class="checkbox" type="checkbox" name="remember-user" value="remember-true" checked>
                       <span class="checkbox-text">Запомнить меня</span>
@@ -79,17 +77,17 @@
                       </svg>
                     </label>
                   </div>
-                  <div class="popup-helps"> <!-- Обертка на случай добавления ссылок -->
+                  <div class="popup-helps"> <!-- Обертка на случай добавления ссылок. -->
                     <a class="popup-forgotpassword" href="#">Забыл пароль</a>
                   </div>
                 </div>
                 <div class="popup-line-buttons">
                   <button class="btn-login" type="submit" id="btn-login">Войти</button>
                   <a class="btn-register" href="#">Регистрация</a>
-                  <!-- Направляет пользователя на страницу регистрации. Выполнено ссылкой вместо кнопки, т.к. для регистрации двух введенных полей наверняка будет недостаточно (пароль обычно вводится дважды, нет ввода настоящего имени/компании пользователя, нет галочки принятия условий использования сайта и т.д.).-->
+                  <!-- Направляет пользователя на страницу регистрации. Выполнено ссылкой вместо кнопки, т.к. для регистрации двух введенных полей явно недостаточно (пароль обычно вводится дважды, нет ввода настоящего имени/компании пользователя, нет галочки принятия условий использования сайта и т.д.). -->
                 </div>
                 <button class="popop-btn-close" type="button" id="btn-closepopup-login">
-                  <span class="visually-hidden">Закрыть форму</span>
+                  <span class="visually-hidden">Закрыть форму.</span>
                 </button>
               </form>
             </div>
@@ -109,14 +107,14 @@
                 <a class="popup-link" href="#">личный кабинет</a>
                 <button class="btn-logout" type="submit" id="btn-logout">Выйти</button>
                 <button class="popop-btn-close" type="button" id="btn-closepopup-loggedin">
-                  <span class="visually-hidden">Закрыть форму</span>
+                  <span class="visually-hidden">Закрыть форму.</span>
                 </button>
               </form>
             </div>
 
             <a class="header-logout" href="#">
               <svg class="logout-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
+                xmlns="http://www.w3.org/2000/svg" aria-label="Выйти.">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                   d="M8.75 17.75L2.25 17.75L2.25 2.25L8.75 2.25L8.75 0.249999L1.25 0.249998L0.25 0.249998L0.25 1.25L0.25 18.75L0.25 19.75L1.25 19.75L8.75 19.75L8.75 17.75ZM14.4571 15.5429L9.97703 11.0628L20 11.0628L20 9.06281L9.97703 9.06281L14.4571 4.58274L13.0429 3.16852L6.85571 9.35571L6.1486 10.0628L6.85571 10.7699L13.0429 16.9571L14.4571 15.5429Z"
                   fill="black" />
@@ -157,7 +155,7 @@
           <div class="header-counters">
             <a class="header-bookmarks" href="#">
               <svg class="order-icon" width="18" height="20" viewBox="0 0 18 20" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
+                xmlns="http://www.w3.org/2000/svg" aria-label="Мои закладки.">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                   d="M2 20L9 16.6049L16 20V1.94005C16 0.86859 15.1046 0 14 0H4C2.89543 0 2 0.86859 2 1.94005V20ZM9 14.4359L4 16.8609V1.94005H14V16.8609L9 14.4359Z"
                   fill="black" />
@@ -166,7 +164,7 @@
             </a>
             <a class="header-basket" href="#">
               <svg class="order-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
+                xmlns="http://www.w3.org/2000/svg" aria-label="Моя корзина.">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                   d="M4.05671 2.00254C3.87974 2.00216 3.70915 2.02226 3.54704 2.06048C3.32482 1.56893 3.03129 1.12794 2.69744 0.792893C2.1308 0.224221 1.23712 0 0 0V2C0.755739 2 1.19063 2.10911 1.28828 2.20711C1.6649 2.58508 1.99286 3.35306 1.99286 4L2.00287 4.14142L2.97924 11.0005C1.34553 11.0856 0.0799112 12.3588 0.00122419 13.9504L0 15C0.0964754 16.6439 1.35789 17.9085 2.93273 17.9984L3.15894 17.9987C3.56894 19.1646 4.67655 20 5.97857 20C7.28012 20 8.38739 19.1652 8.79776 18H11.1308C11.5412 19.1652 12.6484 20 13.95 20C15.6009 20 16.9393 18.6569 16.9393 17C16.9393 15.3431 15.6009 14 13.95 14C12.6484 14 11.5412 14.8348 11.1308 16H8.79776C8.38739 14.8348 7.28012 14 5.97857 14C4.67702 14 3.56975 14.8348 3.15938 16H2.98929C2.48112 15.9694 2.02528 15.5124 1.99107 14.9401L1.99286 14C2.01973 13.4813 2.47245 13.027 3.03866 12.9988L5.00575 12.9993L5.02001 13H15.0629L15.2099 12.9532C15.9654 12.7126 16.5703 12.1416 16.8566 11.4025L16.9616 11.194L17.3026 10.5159C17.6555 9.81392 18.0083 9.11076 18.3522 8.4238C19.1944 6.74107 19.7241 5.67166 19.8414 5.40906C20.4438 4.06045 19.2235 3.02246 17.9763 3.00036L4.05671 2.00254ZM14.7167 11H5.09461C5.03063 10.9822 4.98187 10.9278 4.97233 10.86L3.99593 4.00073L17.8295 4.99493C17.5874 5.49032 17.1474 6.37516 16.5714 7.52609L16.5569 7.55493C16.2281 8.21186 15.8757 8.91405 15.5234 9.61507L15.1827 10.2923L15.0536 10.5488L15.005 10.6622C14.9529 10.8078 14.8496 10.9274 14.7167 11ZM13.95 18C14.5003 18 14.9464 17.5523 14.9464 17C14.9464 16.4477 14.5003 16 13.95 16C13.3997 16 12.9536 16.4477 12.9536 17C12.9536 17.5523 13.3997 18 13.95 18ZM6.975 17C6.975 17.5523 6.52888 18 5.97857 18C5.42826 18 4.98214 17.5523 4.98214 17C4.98214 16.4477 5.42826 16 5.97857 16C6.52888 16 6.975 16.4477 6.975 17Z"
                   fill="black" />
@@ -178,9 +176,9 @@
             <input type="hidden" name="user-id" value="user-000001">
             <input type="hidden" name="cart-content-001" value="sku-00001; 1">
             <!-- Хранит содержимое корзины: 1 ед. артикула 00001. -->
-            <input type="hidden" name="cart-content-002" value="sku-00012; 2"> <!-- 2 ед. артикула 00012. -->
-            <input type="hidden" name="cart-content-003" value="sku-00123; 15"> <!-- 15 ед. артикула 00123. -->
-            <button class="btn-order" >Оформить заказ</button>
+            <input type="hidden" name="cart-content-002" value="sku-00012; 2">
+            <input type="hidden" name="cart-content-003" value="sku-00123; 15">
+            <button class="btn-order" type="submit">Оформить заказ</button>
           </form>
         </div>
       </div>
@@ -188,25 +186,527 @@
     </header>
 
     <main class="page-main">
-      <div class="main-wrapper">
-        123
+      <h1 class="visually-hidden">Главная страница магазина «Техномарт».</h1>
+
+      <section class="main-features">
+        <h2 class="visually-hidden">Разделы магазина.</h2>
+        <div class="main-feature feature-materials feature-new">
+          <div class="feature-caption">Материалы</div>
+          <a class="feature-link" href="#">на любой вкус</a>
+        </div>
+        <div class="main-feature feature-tools">
+          <div class="feature-caption">Инструмент</div>
+          <a class="feature-link" href="#">на все случаи </a>
+        </div>
+        <div class="main-feature feature-equipment">
+          <div class="feature-caption">Техника</div>
+          <a class="feature-link" href="#">для стройки</a>
+        </div>
+        <div class="main-feature feature-sale">
+          <div class="feature-caption">Скидки 50%</div>
+          <a class="feature-link" href="#">на 350 товаров</a>
+        </div>
+        <div class="main-feature feature-delivery">
+          <div class="feature-caption">Доставка</div>
+          <a class="feature-link" href="#">бесплатно</a>
+        </div>
+        <div class="slider-container">
+          <div class="slide slide-current">
+            <!-- Класс slide-current указыает на отображаемый слайд. -->
+            <div class="slider-title">Дрели</div>
+            <div class="slider-text">Соседям на радость!</div>
+            <img class="slider-img" src="images/slider/slider-drills.jpg" width="770" height="390" alt="Большой выбор дрелей в магазине «Техномарт».">
+          </div>
+          <div class="slide">
+            <div class="slider-title">Перфораторы </div>
+            <div class="slider-text">Соседям на радость!</div>
+            <img class="slider-img" src="images/slider/slider-perforators.jpg" width="770" height="390" alt="Большой выбор перфораторов в магазине «Техномарт».">
+          </div>
+          <div class="slide">
+            <div class="slider-title">И много другого инструмента!</div> <!-- Заготовка: в макете третий слайд не описан; в пагинации три пункта. -->
+            <div class="slider-text">Всё для любимых соседей!</div>
+            <img class="slider-img" src="images/slider/slider-dummy.jpg" width="770" height="390" alt="Большой выбор дрелей в магазине «Техномарт».">
+          </div>
+          <button class="slider-button slider-left" type="button">
+            <span class="visually-hidden">Предыдущий слайд.</span>
+          </button>
+          <button class="slider-button slider-right" type="button">
+            <span class="visually-hidden">Следующий слайд.</span>
+          </button>
+          <a class="btn-standart slider-tocatalog" href="#">Открыть каталог</a>
+          <ul class="slider-pagination">
+            <li>
+              <button class="slider-pagedot pagedot-current" type="button">
+                <span class="visually-hidden">Слайд 1.</span>
+              </button>
+            </li>
+            <li>
+              <button class="slider-pagedot" type="button">
+                <span class="visually-hidden">Слайд 2.</span>
+              </button>
+            </li>
+            <li>
+              <button class="slider-pagedot" type="button">
+                <span class="visually-hidden">Слайд 3.</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="main-catalog">
+        <h2 class="catalog-title">Перфораторы</h2>
+
+        <div class="catalog-container">
+          <form class="catalog-filters" action="https://echo.htmlacademy.ru/" method="get">
+
+            <div class="filters-range">
+              <div class="range-title">
+                Цена
+              </div>
+              <div class="range-slider">
+                <div class="range-backline"></div>
+                <div class="range-topline"></div>
+                <button class="range-button range-button-from" type="button" name="range-from" id="range-from">
+                  <span class="visually-hidden">Задать нижний порог цен.</span>
+                </button>
+                <button class="range-button range-button-to" type="button" name="range-to" id="range-to">
+                  <span class="visually-hidden">Задать верхний порог цен.</span>
+                </button>
+              </div>
+              <div class="range-fields">
+                <input class="range-input" type="text" name="price-from" id="price-from" value="0" placeholder="от ..." required>
+                <input class="range-input" type="text" name="price-to" id="price-to" value="30000" placeholder="до ..." required>
+              </div>
+
+
+            </div>
+
+            <fieldset class="filters-checkboxes">
+              <div class="checkboxes-title">
+                Производители
+              </div>
+              <label class="checkbox-container">
+                <input class="checkbox" type="checkbox" name="brand" value="brand-bosch" checked>
+                <span class="checkbox-text">BOSCH</span>
+                <svg class="checkbox-off" width="21" height="21" viewBox="0 0 21 21" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M18.1624 0.903931H2.16235C1.05778 0.903931 0.162354 1.79936 0.162354 2.90393V18.9039C0.162354 20.0085 1.05778 20.9039 2.16235 20.9039H18.1624C19.2669 20.9039 20.1624 20.0085 20.1624 18.9039V2.90393C20.1624 1.79936 19.2669 0.903931 18.1624 0.903931ZM2.16235 18.9039V2.90393H18.1624V18.9039H2.16235Z"
+                    fill="#32425C" />
+                </svg>
+                <svg class="checkbox-on" width="21" height="21" viewBox="0 0 21 21" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M9.86946 11.4897L14.1624 7.19678L15.5766 8.61099L9.86946 14.3181L6.16235 10.611L7.57657 9.19678L9.86946 11.4897Z"
+                    fill="#32425C" />
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M18.1624 0.903931H2.16235C1.05778 0.903931 0.162354 1.79936 0.162354 2.90393V18.9039C0.162354 20.0085 1.05778 20.9039 2.16235 20.9039H18.1624C19.2669 20.9039 20.1624 20.0085 20.1624 18.9039V2.90393C20.1624 1.79936 19.2669 0.903931 18.1624 0.903931ZM2.16235 18.9039V2.90393H18.1624V18.9039H2.16235Z"
+                    fill="#32425C" />
+                </svg>
+              </label>
+              <label class="checkbox-container">
+                <input class="checkbox" type="checkbox" name="brand" value="brand-interskol">
+                <span class="checkbox-text">ИНТЕРСКОЛ</span>
+                <svg class="checkbox-off" width="21" height="21" viewBox="0 0 21 21" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M18.1624 0.903931H2.16235C1.05778 0.903931 0.162354 1.79936 0.162354 2.90393V18.9039C0.162354 20.0085 1.05778 20.9039 2.16235 20.9039H18.1624C19.2669 20.9039 20.1624 20.0085 20.1624 18.9039V2.90393C20.1624 1.79936 19.2669 0.903931 18.1624 0.903931ZM2.16235 18.9039V2.90393H18.1624V18.9039H2.16235Z"
+                    fill="#32425C" />
+                </svg>
+                <svg class="checkbox-on" width="21" height="21" viewBox="0 0 21 21" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M9.86946 11.4897L14.1624 7.19678L15.5766 8.61099L9.86946 14.3181L6.16235 10.611L7.57657 9.19678L9.86946 11.4897Z"
+                    fill="#32425C" />
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M18.1624 0.903931H2.16235C1.05778 0.903931 0.162354 1.79936 0.162354 2.90393V18.9039C0.162354 20.0085 1.05778 20.9039 2.16235 20.9039H18.1624C19.2669 20.9039 20.1624 20.0085 20.1624 18.9039V2.90393C20.1624 1.79936 19.2669 0.903931 18.1624 0.903931ZM2.16235 18.9039V2.90393H18.1624V18.9039H2.16235Z"
+                    fill="#32425C" />
+                </svg>
+              </label>
+              <label class="checkbox-container">
+                <input class="checkbox" type="checkbox" name="brand" value="brand-makita" checked>
+                <span class="checkbox-text">MAKIta</span>
+                <svg class="checkbox-off" width="21" height="21" viewBox="0 0 21 21" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M18.1624 0.903931H2.16235C1.05778 0.903931 0.162354 1.79936 0.162354 2.90393V18.9039C0.162354 20.0085 1.05778 20.9039 2.16235 20.9039H18.1624C19.2669 20.9039 20.1624 20.0085 20.1624 18.9039V2.90393C20.1624 1.79936 19.2669 0.903931 18.1624 0.903931ZM2.16235 18.9039V2.90393H18.1624V18.9039H2.16235Z"
+                    fill="#32425C" />
+                </svg>
+                <svg class="checkbox-on" width="21" height="21" viewBox="0 0 21 21" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M9.86946 11.4897L14.1624 7.19678L15.5766 8.61099L9.86946 14.3181L6.16235 10.611L7.57657 9.19678L9.86946 11.4897Z"
+                    fill="#32425C" />
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M18.1624 0.903931H2.16235C1.05778 0.903931 0.162354 1.79936 0.162354 2.90393V18.9039C0.162354 20.0085 1.05778 20.9039 2.16235 20.9039H18.1624C19.2669 20.9039 20.1624 20.0085 20.1624 18.9039V2.90393C20.1624 1.79936 19.2669 0.903931 18.1624 0.903931ZM2.16235 18.9039V2.90393H18.1624V18.9039H2.16235Z"
+                    fill="#32425C" />
+                </svg>
+              </label>
+              <label class="checkbox-container">
+                <input class="checkbox" type="checkbox" name="brand" value="brand-dewalt">
+                <span class="checkbox-text">Dewalt</span>
+                <svg class="checkbox-off" width="21" height="21" viewBox="0 0 21 21" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M18.1624 0.903931H2.16235C1.05778 0.903931 0.162354 1.79936 0.162354 2.90393V18.9039C0.162354 20.0085 1.05778 20.9039 2.16235 20.9039H18.1624C19.2669 20.9039 20.1624 20.0085 20.1624 18.9039V2.90393C20.1624 1.79936 19.2669 0.903931 18.1624 0.903931ZM2.16235 18.9039V2.90393H18.1624V18.9039H2.16235Z"
+                    fill="#32425C" />
+                </svg>
+                <svg class="checkbox-on" width="21" height="21" viewBox="0 0 21 21" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M9.86946 11.4897L14.1624 7.19678L15.5766 8.61099L9.86946 14.3181L6.16235 10.611L7.57657 9.19678L9.86946 11.4897Z"
+                    fill="#32425C" />
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M18.1624 0.903931H2.16235C1.05778 0.903931 0.162354 1.79936 0.162354 2.90393V18.9039C0.162354 20.0085 1.05778 20.9039 2.16235 20.9039H18.1624C19.2669 20.9039 20.1624 20.0085 20.1624 18.9039V2.90393C20.1624 1.79936 19.2669 0.903931 18.1624 0.903931ZM2.16235 18.9039V2.90393H18.1624V18.9039H2.16235Z"
+                    fill="#32425C" />
+                </svg>
+              </label>
+              <label class="checkbox-container">
+                <input class="checkbox" type="checkbox" name="brand" value="brand-hitachi">
+                <span class="checkbox-text">Hitachi</span>
+                <svg class="checkbox-off" width="21" height="21" viewBox="0 0 21 21" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M18.1624 0.903931H2.16235C1.05778 0.903931 0.162354 1.79936 0.162354 2.90393V18.9039C0.162354 20.0085 1.05778 20.9039 2.16235 20.9039H18.1624C19.2669 20.9039 20.1624 20.0085 20.1624 18.9039V2.90393C20.1624 1.79936 19.2669 0.903931 18.1624 0.903931ZM2.16235 18.9039V2.90393H18.1624V18.9039H2.16235Z"
+                    fill="#32425C" />
+                </svg>
+                <svg class="checkbox-on" width="21" height="21" viewBox="0 0 21 21" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M9.86946 11.4897L14.1624 7.19678L15.5766 8.61099L9.86946 14.3181L6.16235 10.611L7.57657 9.19678L9.86946 11.4897Z"
+                    fill="#32425C" />
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M18.1624 0.903931H2.16235C1.05778 0.903931 0.162354 1.79936 0.162354 2.90393V18.9039C0.162354 20.0085 1.05778 20.9039 2.16235 20.9039H18.1624C19.2669 20.9039 20.1624 20.0085 20.1624 18.9039V2.90393C20.1624 1.79936 19.2669 0.903931 18.1624 0.903931ZM2.16235 18.9039V2.90393H18.1624V18.9039H2.16235Z"
+                    fill="#32425C" />
+                </svg>
+              </label>
+            </fieldset>
+
+            <fieldset class="filters-radios">
+              <div class="radio-title">
+                Питание
+              </div>
+              <label class="radio-container">
+                <span class="radio-text">Аккумуляторные</span>
+                <input class="radio" type="radio" name="power" value="power-battery" checked>
+              </label>
+              <label class="radio-container">
+                <span class="radio-text">Сетевые</span>
+                <input class="radio" type="radio" name="power" value="power-ac">
+              </label>
+            </fieldset>
+
+            <button class="btn-showfilter" type="submit" id="btn-showfiltered">Показать</button>
+
+          </form>
+
+          <div class="catalog-content">
+            <div class="catalog-sorting">
+                          <div class="select-container">
+                            <select class="select" name="cards-select" id="cards-select">
+                              <option value="by-initial" selected>Сортировать</option>
+                              <option value="by-popular">по популярности</option>
+                              <option value="by-cheap">по цене</option>
+                              <option value="by-new">сначала новинки</option>
+                            </select>
+                            <svg class="select-arrow" width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M8 0L9.41421 1.41421L4.70711 6.12132L0 1.41421L1.41421 0L4.70711 3.29289L8 0Z" fill="#3D546F"/>
+                            </svg>
+                          </div>
+            </div>
+
+            <ul class="catalog-cardslist">
+              <li class="card card-new">
+                <div class="card-photo-container">
+                  <img class="card-photo" src="images/goods/sku-00001.jpg" width="216" height="180" alt="Перфоратор BOSCH BFG 3000">
+                </div>
+                <div class="card-title">
+                  Перфоратор BOSCH <br>
+                  BFG&nbsp;3000
+                </div>
+                <div class="card-oldprice">
+                  22500&nbsp;₽
+                </div>
+                <a class="card-price-container" href="#">
+                  <div class="card-pricelabel">
+                    15500&nbsp;₽
+                  </div>
+                </a>
+                <div class="card-overlay">
+                  <a class="btn-buy" href="#">Купить</a>
+                  <a class="btn-bookmark" href="#">В закладки</a>
+                </div>
+              </li>
+              <li class="card">
+                <div class="card-photo-container">
+                  <img class="card-photo" src="images/goods/sku-00001.jpg" width="216" height="180" alt="Перфоратор BOSCH BFG 3000">
+                </div>
+                <div class="card-title">
+                  Перфоратор BOSCH <br>
+                  BFG&nbsp;3000
+                </div>
+                <div class="card-oldprice">
+                  22500&nbsp;₽
+                </div>
+                <a class="card-price-container" href="#">
+                  <div class="card-pricelabel">
+                    15500&nbsp;₽
+                  </div>
+                </a>
+                <div class="card-overlay">
+                  <a class="btn-buy" href="#">Купить</a>
+                  <a class="btn-bookmark" href="#">В закладки</a>
+                </div>
+              </li>
+              <li class="card card-new">
+                <div class="card-photo-container">
+                  <img class="card-photo" src="images/goods/sku-00001.jpg" width="216" height="180" alt="Перфоратор BOSCH BFG 3000">
+                </div>
+                <div class="card-title">
+                  Перфоратор BOSCH <br>
+                  BFG&nbsp;3000
+                </div>
+                <div class="card-oldprice">
+
+                </div>
+                <a class="card-price-container" href="#">
+                  <div class="card-pricelabel">
+                    15500&nbsp;₽
+                  </div>
+                </a>
+                <div class="card-overlay">
+                  <a class="btn-buy" href="#">Купить</a>
+                  <a class="btn-bookmark" href="#">В закладки</a>
+                </div>
+              </li>
+              <li class="card card-new">
+                <div class="card-photo-container">
+                  <img class="card-photo" src="images/goods/sku-00001.jpg" width="216" height="180" alt="Перфоратор BOSCH BFG 3000">
+                </div>
+                <div class="card-title">
+                  Перфоратор BOSCH <br>
+                  BFG&nbsp;3000
+                </div>
+                <div class="card-oldprice">
+
+                </div>
+                <a class="card-price-container" href="#">
+                  <div class="card-pricelabel">
+                    15500&nbsp;₽
+                  </div>
+                </a>
+                <div class="card-overlay">
+                  <a class="btn-buy" href="#">Купить</a>
+                  <a class="btn-bookmark" href="#">В закладки</a>
+                </div>
+              </li>
+              <li class="card card-new">
+                <div class="card-photo-container">
+                  <img class="card-photo" src="images/goods/sku-00001.jpg" width="216" height="180" alt="Перфоратор BOSCH BFG 3000">
+                </div>
+                <div class="card-title">
+                  Перфоратор BOSCH <br>
+                  BFG&nbsp;3000
+                </div>
+                <div class="card-oldprice">
+
+                </div>
+                <a class="card-price-container" href="#">
+                  <div class="card-pricelabel">
+                    15500&nbsp;₽
+                  </div>
+                </a>
+                <div class="card-overlay">
+                  <a class="btn-buy" href="#">Купить</a>
+                  <a class="btn-bookmark" href="#">В закладки</a>
+                </div>
+              </li>
+              <li class="card card-new">
+                <div class="card-photo-container">
+                  <img class="card-photo" src="images/goods/sku-00001.jpg" width="216" height="180" alt="Перфоратор BOSCH BFG 3000">
+                </div>
+                <div class="card-title">
+                  Перфоратор BOSCH <br>
+                  BFG&nbsp;3000
+                </div>
+                <div class="card-oldprice">
+                  15500&nbsp;₽
+                </div>
+                <a class="card-price-container" href="#">
+                  <div class="card-pricelabel">
+                    15500&nbsp;₽
+                  </div>
+                </a>
+                <div class="card-overlay">
+                  <a class="btn-buy" href="#">Купить</a>
+                  <a class="btn-bookmark" href="#">В закладки</a>
+                </div>
+              </li>
+              <li class="card card-new">
+                <div class="card-photo-container">
+                  <img class="card-photo" src="images/goods/sku-00001.jpg" width="216" height="180" alt="Перфоратор BOSCH BFG 3000">
+                </div>
+                <div class="card-title">
+                  Перфоратор BOSCH <br>
+                  BFG&nbsp;3000
+                </div>
+                <div class="card-oldprice">
+                  22500&nbsp;₽
+                </div>
+                <a class="card-price-container" href="#">
+                  <div class="card-pricelabel">
+                    15500&nbsp;₽
+                  </div>
+                </a>
+                <div class="card-overlay">
+                  <a class="btn-buy" href="#">Купить</a>
+                  <a class="btn-bookmark" href="#">В закладки</a>
+                </div>
+              </li>
+              <li class="card">
+                <div class="card-photo-container">
+                  <img class="card-photo" src="images/goods/sku-00001.jpg" width="216" height="180" alt="Перфоратор BOSCH BFG 3000">
+                </div>
+                <div class="card-title">
+                  Перфоратор BOSCH <br>
+                  BFG&nbsp;3000
+                </div>
+                <div class="card-oldprice">
+                  22500&nbsp;₽
+                </div>
+                <a class="card-price-container" href="#">
+                  <div class="card-pricelabel">
+                    15500&nbsp;₽
+                  </div>
+                </a>
+                <div class="card-overlay">
+                  <a class="btn-buy" href="#">Купить</a>
+                  <a class="btn-bookmark" href="#">В закладки</a>
+                </div>
+              </li>
+              <li class="card card-new">
+                <div class="card-photo-container">
+                  <img class="card-photo" src="images/goods/sku-00001.jpg" width="216" height="180" alt="Перфоратор BOSCH BFG 3000">
+                </div>
+                <div class="card-title">
+                  Перфоратор BOSCH <br>
+                  BFG&nbsp;3000
+                </div>
+                <div class="card-oldprice">
+
+                </div>
+                <a class="card-price-container" href="#">
+                  <div class="card-pricelabel">
+                    15500&nbsp;₽
+                  </div>
+                </a>
+                <div class="card-overlay">
+                  <a class="btn-buy" href="#">Купить</a>
+                  <a class="btn-bookmark" href="#">В закладки</a>
+                </div>
+              </li>
+            </ul>
+
+            <ul class="catalog-pagination">
+              <li class="pagination-item">
+                <a class="pagination-link" href="#">1</a>
+              </li>
+              <li class="pagination-item pagination-current">
+                <a class="pagination-link" href="#">2</a>
+              </li>
+              <li class="pagination-item">
+                <a class="pagination-link" href="#">3</a>
+              </li>
+              <li class="pagination-item">
+                <a class="pagination-link" href="#">4</a>
+              </li>
+              <li class="pagination-item pagination-showmore">
+                <a class="pagination-link" href="#">показать еще</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="main-services">
+        <div class="section-wrapper">
+          <h2 class="services-title">Сервисы</h2>
+          <div class="services-text">
+          Хороший интернет-магазин отличается от&nbsp;плохого не&nbsp;только ценами!<br>
+          Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.</div>
+          <ul class="services-cards">
+            <li>
+              <a class="service-card service-delivery" href="#">
+                <div class="service-title">
+                  Доставка
+                </div>
+                <div class="service-text">
+                  Мы с&nbsp;удовольствием доставим ваш товар прямо к&nbsp;вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на&nbsp;ваш этаж!
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="service-card service-warranty" href="#">
+                <div class="service-title">
+                  Гарантия
+                </div>
+                <div class="service-text">
+                  Вы в&nbsp;течение года можете написать нам письмо с&nbsp;просьбой вернуть сумму оплаты, и&nbsp;мы полностью возместим вам стоимось товара
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="service-card service-credit" href="#">
+                <div class="service-title">
+                  Кредит
+                </div>
+                <div class="service-text">
+                  Вы можете оформить кредит прямо на сайте! Для этого нужно выбрать понравившийся товар и&nbsp;заполнить поля и ждать результата одобрения кредита. <br>
+                  Все как в&nbsp;банке, только проще!
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="sections-wrapper">
+        <section class="main-about">
+          <h2 class="about-title">Компания «Техномарт»</h2>
+          <div class="about-texts">
+            <div class="about-text">Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта и&nbsp;строительства не&nbsp;оставит равнодушными любителей сэкономить на гастарбайтерах.
+            </div>
+            <div class="about-text">Мы можем доставить ваш товар в самые отдаленные точки России! <br>
+            Техномарт работает со многими транспортными компаниями:
+            </div>
+          </div>
+          <a class="btn-standart btn-about" href="#">О компании</a>
+
+        </section>
+        <section class="main-contacts">
+          <h2 class="contacts-title">Контакты</h2>
+          <div class="contacts-texts">
+            <div class="contacts-text">Вы можете забрать товар сами,  заехав в&nbsp;наш офис:
+            </div>
+          </div>
+          <a class="contacts-map-link" href="https://2gis.ru/spb/search/%D0%91%D0%BE%D0%BB%D1%8C%D1%88%D0%B0%D1%8F%20%D0%BA%D0%BE%D0%BD%D1%8E%D1%88%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F%2019%2F8?m=30.322876%2C59.938013%2F16.38">
+            <img class="contacts-map-photo" src="images/map.jpg" width="500" height="347" alt="Карта: Санкт-Петербург, ул. Большая Конюшенная, дом 19/8">
+          </a>
+        </section>
       </div>
+
     </main>
 
     <footer class="page-footer">
-<!--       <div class="footer-wrapper">
-        <div class="footer-content">
-          (контент футера)
-        </div>
-        <div class="footer-copyrights">
-          (копирайты футера)
-        </div>
-      </div> -->
 
       <section class="footer-content">
+        <h2 class="visually-hidden">Магазин «Техномарт» – контактная информация.</h2>
         <div class="footer-content-wrapper">
           <div class="footer-links">
-            <svg class="footer-logo" width="220" height="56" viewBox="0 0 220 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg class="footer-logo" width="220" height="56" viewBox="0 0 220 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Логотип магазина «Техномарт».">
               <rect width="220" height="56" fill="#EE3643"/>
               <rect y="50.4" width="220" height="5.6" fill="#B52933"/>
               <path fill-rule="evenodd" clip-rule="evenodd" d="M159.699 17.5376V34.1039H157.589V17.5376H153.838V15.6969H163.451V17.5376H159.699ZM151.576 27.2802C151.208 27.7973 150.747 28.1654 150.192 28.3846C149.638 28.6037 148.977 28.7133 148.211 28.7133C147.852 28.7133 147.446 28.687 146.992 28.6344C146.539 28.5818 146.164 28.5204 145.867 28.4503V34.1039H143.757V15.9599C144.351 15.767 144.949 15.6312 145.55 15.5523C146.152 15.4734 146.805 15.434 147.508 15.434C148.446 15.434 149.243 15.5435 149.899 15.7627C150.556 15.9818 151.087 16.3455 151.494 16.8539C151.9 17.3623 152.197 18.0372 152.385 18.8787C152.572 19.7202 152.666 20.7632 152.666 22.0079C152.666 23.2876 152.576 24.357 152.396 25.2159C152.217 26.0749 151.943 26.763 151.576 27.2802ZM150.38 19.6413C150.263 19.0102 150.079 18.5106 149.829 18.1424C149.579 17.7743 149.263 17.5157 148.88 17.3667C148.497 17.2177 148.039 17.1432 147.508 17.1432H145.867V26.8726H147.508C148.039 26.8726 148.497 26.7981 148.88 26.6491C149.263 26.5 149.579 26.2415 149.829 25.8733C150.079 25.5052 150.263 25.0056 150.38 24.3745C150.497 23.7434 150.556 22.9545 150.556 22.0079C150.556 21.0612 150.497 20.2724 150.38 19.6413ZM138.482 29.3707H133.793L132.738 34.1039H130.628L134.613 15.6969H137.661L141.647 34.1039H139.537L138.482 29.3707ZM136.184 18.3265H136.09L134.145 27.53H138.13L136.184 18.3265ZM126.056 20.4301H125.939L122.539 31.7373H120.429L117.03 20.4301H116.913L116.209 34.1039H114.099L115.037 15.6969H117.616L121.437 28.3188H121.531L125.353 15.6969H127.932L128.869 34.1039H126.759L126.056 20.4301ZM110.301 32.3947C109.864 33.1134 109.336 33.6218 108.719 33.9198C108.101 34.2178 107.394 34.3668 106.597 34.3668C105.8 34.3668 105.093 34.2178 104.475 33.9198C103.858 33.6218 103.33 33.1134 102.893 32.3947C102.455 31.6759 102.123 30.7074 101.896 29.489C101.67 28.2706 101.556 26.7411 101.556 24.9004C101.556 23.0597 101.67 21.5302 101.896 20.3118C102.123 19.0934 102.455 18.1249 102.893 17.4061C103.33 16.6874 103.858 16.179 104.475 15.881C105.093 15.583 105.8 15.434 106.597 15.434C107.394 15.434 108.101 15.583 108.719 15.881C109.336 16.179 109.864 16.6874 110.301 17.4061C110.739 18.1249 111.071 19.0934 111.298 20.3118C111.524 21.5302 111.638 23.0597 111.638 24.9004C111.638 26.7411 111.524 28.2706 111.298 29.489C111.071 30.7074 110.739 31.6759 110.301 32.3947ZM109.281 21.0086C109.117 19.9919 108.902 19.1855 108.637 18.5894C108.371 17.9934 108.058 17.5814 107.699 17.3535C107.339 17.1256 106.972 17.0117 106.597 17.0117C106.222 17.0117 105.855 17.1256 105.495 17.3535C105.136 17.5814 104.823 17.9934 104.557 18.5894C104.292 19.1855 104.077 19.9919 103.913 21.0086C103.748 22.0254 103.666 23.3227 103.666 24.9004C103.666 26.4781 103.748 27.7754 103.913 28.7922C104.077 29.8089 104.292 30.6153 104.557 31.2114C104.823 31.8074 105.136 32.2194 105.495 32.4472C105.855 32.6751 106.222 32.7891 106.597 32.7891C106.972 32.7891 107.339 32.6751 107.699 32.4472C108.058 32.2194 108.371 31.8074 108.637 31.2114C108.902 30.6153 109.117 29.8089 109.281 28.7922C109.445 27.7754 109.528 26.4781 109.528 24.9004C109.528 23.3227 109.445 22.0254 109.281 21.0086ZM96.6329 25.6893H91.7095V34.1039H89.5995V15.6969H91.7095V23.8486H96.6329V15.6969H98.7429V34.1039H96.6329V25.6893ZM85.4974 34.1039L82.5668 26.2152L79.6362 34.1039H77.5262L81.0429 24.6374L77.8779 15.6969H79.9879L82.5668 23.0597L85.1458 15.6969H87.2558L84.0907 24.6374L87.6075 34.1039H85.4974ZM68.2655 15.6969H76.2367V17.5376H70.3756V23.5856H75.5334V25.4263H70.3756V32.2632H76.2367V34.1039H68.2655V15.6969ZM62.6388 34.1039H60.5287V17.5376H56.7776V15.6969H66.3899V17.5376H62.6388V34.1039Z" fill="white"/>
@@ -218,17 +718,17 @@
             <ul class="socials-list">
               <li class="social-item">
                 <a class="social" href="#">
-                  <img src="images/social-pin.svg" width="23" height="23" alt="Pinterest">
+                  <img src="images/social-pin.svg" width="23" height="23" alt="Pinterest.">
                 </a>
               </li>
               <li class="social-item">
                 <a class="social" href="#">
-                  <img src="images/social-vk.svg" width="18" height="10" alt="Вконтакте">
+                  <img src="images/social-vk.svg" width="18" height="10" alt="Вконтакте.">
                 </a>
               </li>
               <li class="social-item">
                 <a class="social" href="#">
-                  <img src="images/social-vsco.svg" width="24" height="24" alt="VSCO">
+                  <img src="images/social-vsco.svg" width="24" height="24" alt="VSCO.">
                 </a>
               </li>
             </ul>
@@ -240,13 +740,12 @@
             </div>
             <div class="footer-subscribe">
               <div class="subscribe-title">Получайте лучшие предложения</div>
-              <form class="subscribe-form"action="https://echo.htmlacademy.ru/" method="post">
+              <form class="subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
                 <input class="input-email" type="email" name="subscribe-email" id="subscribe-email" placeholder="email@example.com" required>
                 <button class="btn-subscribe" type="submit" id="btn-subscribe">
-                  <svg class="subscribe-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg class="subscribe-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Подписаться.">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M4.05671 2.00254C3.87974 2.00216 3.70915 2.02226 3.54704 2.06048C3.32482 1.56893 3.03129 1.12794 2.69744 0.792893C2.1308 0.224221 1.23712 0 0 0V2C0.755739 2 1.19063 2.10911 1.28828 2.20711C1.6649 2.58508 1.99286 3.35306 1.99286 4L2.00287 4.14142L2.97924 11.0005C1.34553 11.0856 0.0799112 12.3588 0.00122419 13.9504L0 15C0.0964754 16.6439 1.35789 17.9085 2.93273 17.9984L3.15894 17.9987C3.56894 19.1646 4.67655 20 5.97857 20C7.28012 20 8.38739 19.1652 8.79776 18H11.1308C11.5412 19.1652 12.6484 20 13.95 20C15.6009 20 16.9393 18.6569 16.9393 17C16.9393 15.3431 15.6009 14 13.95 14C12.6484 14 11.5412 14.8348 11.1308 16H8.79776C8.38739 14.8348 7.28012 14 5.97857 14C4.67702 14 3.56975 14.8348 3.15938 16H2.98929C2.48112 15.9694 2.02528 15.5124 1.99107 14.9401L1.99286 14C2.01973 13.4813 2.47245 13.027 3.03866 12.9988L5.00575 12.9993L5.02001 13H15.0629L15.2099 12.9532C15.9654 12.7126 16.5703 12.1416 16.8566 11.4025L16.9616 11.194L17.3026 10.5159C17.6555 9.81392 18.0083 9.11076 18.3522 8.4238C19.1944 6.74107 19.7241 5.67166 19.8414 5.40906C20.4438 4.06045 19.2235 3.02246 17.9763 3.00036L4.05671 2.00254ZM14.7167 11H5.09461C5.03063 10.9822 4.98187 10.9278 4.97233 10.86L3.99593 4.00073L17.8295 4.99493C17.5874 5.49032 17.1474 6.37516 16.5714 7.52609L16.5569 7.55493C16.2281 8.21186 15.8757 8.91405 15.5234 9.61507L15.1827 10.2923L15.0536 10.5488L15.005 10.6622C14.9529 10.8078 14.8496 10.9274 14.7167 11ZM13.95 18C14.5003 18 14.9464 17.5523 14.9464 17C14.9464 16.4477 14.5003 16 13.95 16C13.3997 16 12.9536 16.4477 12.9536 17C12.9536 17.5523 13.3997 18 13.95 18ZM6.975 17C6.975 17.5523 6.52888 18 5.97857 18C5.42826 18 4.98214 17.5523 4.98214 17C4.98214 16.4477 5.42826 16 5.97857 16C6.52888 16 6.975 16.4477 6.975 17Z" fill="#ffffff"/>
                   </svg>  <!-- Иконка заинлайнена, чтобы не ломать вёрстку, если она не загрузится (кнопка слишком маленькая для замещающего текста). -->
-                  <span class="visually-hidden">Подписаться</span>
                 </button>
               </form>
             </div>
@@ -254,6 +753,7 @@
         </div>
       </section>
       <section class="footer-copyrights">
+        <h2 class="visually-hidden">Сайт магазина «Техномарт» – разработан в HTML Academy.</h2>
         <div class="footer-copyrights-wrapper">
           <div class="footer-copyright">©&nbsp;2010&#8209;2019 Компания «Техномарт» Все права защищены</div>
           <div class="footer-credits">
